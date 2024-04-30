@@ -4,7 +4,7 @@ Benchmarking AWS, Google cloud, and azure database options | Computer Systems Pe
 ### Consoles
 
 1. Azure: https://portal.azure.com/#home
-2. 
+2. Google Cloud: https://console.cloud.google.com/welcome/
 
 ### Offers
 
