@@ -45,7 +45,8 @@ sudo docker run -it --name hammerdb hammerdb bash
 
 ### Setup HammerDB
 ```bash
-cd scripts/python/mssqls/tprocc```
+cd scripts/python/mssqls/tprocc
+```
 We need to set connection settings in all py files!
 
 ```python
