@@ -3,7 +3,7 @@ Benchmarking AWS, Google cloud, and azure database options | Computer Systems Pe
 
 ## Running HammerDB on VM's via CLI
 ### Setting up vm with HammmerDB via docker.
-```
+```bash
 # Add Docker's official GPG key:
 sudo apt-get update
 sudo apt-get install ca-certificates curl
@@ -19,18 +19,49 @@ echo \
 sudo apt-get update
 ```
 
-```
+```bash
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
-```
+```bash
 docker --version
 ```
 
-```sudo docker pull tpcorg/hammerdb```
-```docker tag  tpcorg/hammerdb hammerdb```
-```sudo docker run -it --name hammerdb hammerdb bash
+```bash
+sudo docker pull tpcorg/hammerdb```
+
+```bash
+docker tag  tpcorg/hammerdb hammerdb```
+
+```bash
+sudo docker run -it --name hammerdb hammerdb bash
 ```
 
+### Setup HammerDB
+```bash
+cd scripts/python/mssqls/tprocc```
+We need to set connection settings in all py files.
+
+```python
+diset('connection','mssqls_tcp','false')
+diset('connection','mssqls_port','1433')
+diset('connection','mssqls_azure','true')
+diset('connection','mssqls_encrypt_connection','true')
+diset('connection','mssqls_trust_server_cert','true')
+diset('connection','mssqls_authentication','sql')
+diset('connection','mssqls_server','<IP ADRESS OF DATABASE>')
+diset('connection','mssqls_linux_server','<IP ADRESS OF DATABASE>')
+diset('connection','mssqls_linux_authent','sql')
+diset('connection','mssqls_linux_odbc','{ODBC Driver 18 for SQL Server}')
+diset('connection','mssqls_uid','azureuser')
+diset('connection','mssqls_pass','<DB PASSWORD>')
+```
+**Set mssqls_tprocc_buildschema.py**
+
+**Set mssqls_tprocc_deleteschema.py**
+
+**Set mssqls_tprocc_result.py**
+
+**Set mssqls_tprocc_run.py**
 
 
 ### Consoles
