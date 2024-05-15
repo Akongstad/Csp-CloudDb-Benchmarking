@@ -46,7 +46,7 @@ sudo docker run -it --name hammerdb hammerdb bash
 ### Setup HammerDB
 ```bash
 cd scripts/python/mssqls/tprocc```
-We need to set connection settings in all py files.
+We need to set connection settings in all py files!
 
 ```python
 diset('connection','mssqls_tcp','false')
@@ -63,13 +63,35 @@ diset('connection','mssqls_uid','azureuser')
 diset('connection','mssqls_pass','<DB PASSWORD>')
 ```
 **Set mssqls_tprocc_buildschema.py**
+Set virtual users and warehouses:
+```python
+vu = tclpy.eval('numberOfCPUs')
+warehouse = int(vu) * 5
+diset('tpcc','mssqls_count_ware',warehouse)
+diset('tpcc','mssqls_num_vu',vu)
+```
+
 
 **Set mssqls_tprocc_deleteschema.py**
 
 **Set mssqls_tprocc_result.py**
 
 **Set mssqls_tprocc_run.py**
+```python
+diset('tpcc','mssqls_dbase','tpcc')
+diset('tpcc','mssqls_driver','timed')
+diset('tpcc','mssqls_total_iterations','10000000')
+diset('tpcc','mssqls_rampup','2')
+diset('tpcc','mssqls_duration','5')
+diset('tpcc','mssqls_allwarehouse','true')
+diset('tpcc','mssqls_timeprofile','true')
+diset('tpcc','mssqls_checkpoint','false')
+```
 
+### Execute HammerDB
+```bash
+./mssqls_tprocc_py.sh
+```
 
 ### Consoles
 
