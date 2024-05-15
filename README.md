@@ -3,6 +3,9 @@ Benchmarking AWS, Google cloud, and azure database options | Computer Systems Pe
 
 ## Running HammerDB on VM's via CLI
 ### Setting up vm with HammmerDB via docker.
+Create and ssh into linux VM
+
+Set up Docker's apt repository.
 ```bash
 # Add Docker's official GPG key:
 sudo apt-get update
@@ -19,19 +22,20 @@ echo \
 sudo apt-get update
 ```
 
+Install docker
 ```bash
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
 ```bash
 docker --version
 ```
-
+Pull and tag hammerdb image
 ```bash
 sudo docker pull tpcorg/hammerdb```
-
 ```bash
 docker tag  tpcorg/hammerdb hammerdb```
 
+Run the image
 ```bash
 sudo docker run -it --name hammerdb hammerdb bash
 ```
