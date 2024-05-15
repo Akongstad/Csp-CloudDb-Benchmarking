@@ -31,9 +31,12 @@ docker --version
 ```
 Pull and tag hammerdb image
 ```bash
-sudo docker pull tpcorg/hammerdb```
+sudo docker pull tpcorg/hammerdb
+```
+
 ```bash
-docker tag  tpcorg/hammerdb hammerdb```
+docker tag  tpcorg/hammerdb hammerdb
+```
 
 Run the image
 ```bash
