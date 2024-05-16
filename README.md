@@ -133,6 +133,12 @@ cd /home/HammerDB-4.10/
 ./mssqls_tprocc_py.sh
 ```
 
+### Getting data from HammerDB docker container to local
+```bash
+docker cp <containerId>:/file/path/within/container /host/path/target
+```
+Use either the cloud provider GUI or scp to download the files from the VM.
+
 
 ## Consoles
 
