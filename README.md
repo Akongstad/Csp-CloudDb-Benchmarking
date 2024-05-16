@@ -111,7 +111,27 @@ mv mssqls_tprocc_py.sh ../../../../
 ./mssqls_tprocc_py.sh
 ```
 
-### Consoles
+### Between runs
+Change vu in scripts
+```bash
+cd scripts/python/mssqls/tprocc
+```
+```bash
+vim mssqls_tprocc_buildschema.py
+```
+```bash
+vim mssqls_tprocc_run.py
+```
+```bash
+vim mssqls_tprocc_deleteschema.py
+```
+Re run benchmark
+```bash
+cd /home/HammerDB-4.10/
+```
+
+
+## Consoles
 
 1. Azure: https://portal.azure.com/#home
 2. Google Cloud: https://console.cloud.google.com/welcome/
