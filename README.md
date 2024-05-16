@@ -35,7 +35,7 @@ sudo docker pull tpcorg/hammerdb
 ```
 
 ```bash
-docker tag  tpcorg/hammerdb hammerdb
+sudo docker tag  tpcorg/hammerdb hammerdb
 ```
 
 Run the image
