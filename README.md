@@ -129,6 +129,9 @@ Re run benchmark
 ```bash
 cd /home/HammerDB-4.10/
 ```
+```bash
+./mssqls_tprocc_py.sh
+```
 
 
 ## Consoles
