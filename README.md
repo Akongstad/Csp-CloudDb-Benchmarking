@@ -48,7 +48,6 @@ sudo docker run -it --name hammerdb hammerdb bash
 cd scripts/python/mssqls/tprocc
 ```
 We need to set connection settings in all py files!
-
 ```python
 diset('connection','mssqls_tcp','false')
 diset('connection','mssqls_port','1433')
@@ -66,7 +65,7 @@ diset('connection','mssqls_pass','<DB PASSWORD>')
 **Set mssqls_tprocc_buildschema.py**
 Set virtual users and warehouses:
 ```python
-vu = tclpy.eval('numberOfCPUs')
+vu = <AMOUNT OF VUs>
 warehouse = int(vu) * 5
 diset('tpcc','mssqls_count_ware',warehouse)
 diset('tpcc','mssqls_num_vu',vu)
@@ -78,6 +77,7 @@ diset('tpcc','mssqls_num_vu',vu)
 **Set mssqls_tprocc_result.py**
 
 **Set mssqls_tprocc_run.py**
+Set virtual users.
 ```python
 diset('tpcc','mssqls_dbase','tpcc')
 diset('tpcc','mssqls_driver','timed')
@@ -87,6 +87,17 @@ diset('tpcc','mssqls_duration','5')
 diset('tpcc','mssqls_allwarehouse','true')
 diset('tpcc','mssqls_timeprofile','true')
 diset('tpcc','mssqls_checkpoint','false')
+...
+loadscript()
+print("TEST STARTED")
+vuset('vu','<AMOUNTVUs>')
+vucreate()
+tcstart()
+tcstatus()
+jobid = tclpy.eval('vurun')
+vudestroy()
+tcstop()
+...
 ```
 
 ### Execute HammerDB
