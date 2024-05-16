@@ -55,12 +55,12 @@ diset('connection','mssqls_azure','true')
 diset('connection','mssqls_encrypt_connection','true')
 diset('connection','mssqls_trust_server_cert','true')
 diset('connection','mssqls_authentication','sql')
-diset('connection','mssqls_server','<IP ADRESS OF DATABASE>')
-diset('connection','mssqls_linux_server','<IP ADRESS OF DATABASE>')
+diset('connection','mssqls_server','<IP>')
+diset('connection','mssqls_linux_server','<IP>')
 diset('connection','mssqls_linux_authent','sql')
 diset('connection','mssqls_linux_odbc','{ODBC Driver 18 for SQL Server}')
 diset('connection','mssqls_uid','azureuser')
-diset('connection','mssqls_pass','<DB PASSWORD>')
+diset('connection','mssqls_pass','PASSWORD')
 ```
 **Set mssqls_tprocc_buildschema.py**
 Set virtual users and warehouses:
