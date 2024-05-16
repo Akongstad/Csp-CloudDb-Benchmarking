@@ -100,7 +100,13 @@ tcstop()
 ...
 ```
 
+
+
 ### Execute HammerDB
+Move script to source folder.
+```bash
+mv mssqls_tprocc_py.sh ../../../../
+```
 ```bash
 ./mssqls_tprocc_py.sh
 ```
